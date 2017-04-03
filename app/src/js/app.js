@@ -3,8 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Box from './Components/boxes/Box.jsx';
+import Pricipal from './Components/Pricipal.jsx';
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Box />, app);
+ReactDOM.render(<Pricipal />, app);

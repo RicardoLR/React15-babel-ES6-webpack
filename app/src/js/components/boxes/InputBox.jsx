@@ -25,6 +25,19 @@ export default class InputBox extends React.Component {
 
   }
 
+  //  Se ejecuta antes del render
+  componentWillMount(){
+
+
+  }
+
+
+  //  Se ejecuta al termino del render
+  componentDidMount(){
+
+  }
+
+
   // @evento inyectada por default
   ejecutar(evento){
     /**
