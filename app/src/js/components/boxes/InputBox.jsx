@@ -5,22 +5,29 @@ var React = require('react'),
 */
 
 import React from "react"
+import ResultBox from "../boxes/ResultBox.jsx"
+
 import InputItem from "../items/InputItem.jsx"
 
 
 export default class InputBox extends React.Component {
 
-  constructor(){
-    super()
+  constructor(props) {
+    super(props);
 
     this.state = {
-      textButton: "Agregar"
+      button_title: "Agregar",
+      output: "",
+
+      // lista de tareas para ResultBox
+      items: []
     }
 
   }
 
   // @evento inyectada por default
   ejecutar(evento){
+    /**
     if(this.state.textButton == "Agregar"){
       this.setState({
         textButton: "No Agregar"
@@ -28,21 +35,44 @@ export default class InputBox extends React.Component {
     }
     else{
       this.setState({
-        textButton: "Agregar"
+        button_title: "Agregar"
       })
     }
     console.log("class InputBox, ejecutar(evento), evento.target.id: ", evento.target.id);
+    */
+    console.log("class InputBox, ejecutar(evento), this.refs.input_task.getValue(): ", this.refs.input_task.getValue() );
+
+    if( this.refs.input_task.getValue() == "" ){
+
+      // setState por default
+      this.setState({output: "Introduce una tarea"});
+    }else{
+
+      this.setState({
+        output: "Listo",
+
+        // concat agrega al arreglo inplicitamente, no como a string
+        items: this.state.items.concat( this.refs.input_task.getValue() )
+      });
+    }
+
   }
 
   render(){
 
     return(
       <div className="row">
-        <InputItem />
+        <InputItem ref="input_task"/>
 
         <button type="button" id="btn" onClick={this.ejecutar.bind(this)} >
-          {this.state.textButton}
+          {this.state.button_title}
         </button>
+        <br />
+
+        <label>{this.state.output}</label>
+
+
+        <ResultBox items={this.state.items} />
       </div>
     );
 

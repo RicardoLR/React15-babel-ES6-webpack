@@ -5,8 +5,8 @@ import React from "react"
 
 export default class InputItem extends React.Component {
 
-  constructor(){
-    super()
+  constructor(props) {
+    super(props);
 
     /** Sustitucion del metodo getInitialState: function(){...} */
     this.state = ({
@@ -16,6 +16,8 @@ export default class InputItem extends React.Component {
 
   myOnChange(evento){
     console.log("class InputItem, myOnChange(evento), evento.target.value: ", evento.target.value);
+
+    // setState por default
     this.setState({
       valor: evento.target.value
     });

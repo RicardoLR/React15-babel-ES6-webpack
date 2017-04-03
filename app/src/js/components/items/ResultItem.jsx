@@ -3,14 +3,17 @@
 import React from "react"
 
 
-
 export default class ResultItem extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+
   render() {
     return (
 
-      <div class="container">
-        <p class="bg-primary">Component ResultItem</p>
-      </div>
+      <li>{this.props.name_result_item}</li>
 
     );
   }
