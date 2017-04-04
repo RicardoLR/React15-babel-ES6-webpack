@@ -72,9 +72,9 @@ export default class NavBar extends React.Component {
                 }.bind(this))}
               </ul>
 
-              <form role="search" class="navbar-form navbar-left">
+              <form role="search" class="navbar-form navbar-right">
                   <div class="form-group">
-                      <input type="text" placeholder="Search" class="form-control" />
+                      <input type="text" placeholder="Buscar..." class="form-control" />
                   </div>
               </form>
               <ul class="nav navbar-nav navbar-right">

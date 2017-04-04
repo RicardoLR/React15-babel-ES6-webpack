@@ -1,6 +1,9 @@
 
 import React from "react"
 
+// pub sub para esuchar eventos de Component no hijos
+import PubSub from "pubsub-js"
+
 
 export default class NavItem extends React.Component {
 
@@ -25,6 +28,10 @@ export default class NavItem extends React.Component {
     LLamo al evento (funcion) de mi padre "NavBar"
     =============================================== */
     this.props.onClick(event);
+
+
+    // =========== Mensajes con PubSub precionando item de NavBar hacia Boxes en title_box ===========
+    PubSub.publish('listener_box', this.props.name);
   }
 
   render(){
