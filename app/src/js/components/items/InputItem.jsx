@@ -14,6 +14,7 @@ export default class InputItem extends React.Component {
     })
   }
 
+  /** funcion que capta cada que se ingresa letra por letra al input */
   myOnChange(evento){
     console.log("class InputItem, myOnChange(evento), evento.target.value: ", evento.target.value);
 
@@ -28,7 +29,7 @@ export default class InputItem extends React.Component {
   /** =====================================
   SETTER Y GETTER de estados
 
-  Clases hijas pueda acceder al stado de input
+  Clases hijas pueda acceder al stado de input las clases padre
   ===================================== */
   getValue(){
     return this.state.valor
