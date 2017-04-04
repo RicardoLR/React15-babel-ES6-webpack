@@ -8,6 +8,11 @@ import NavBar from "../Components/NavBar.jsx"
 
 
 export default class Pricipal extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
 

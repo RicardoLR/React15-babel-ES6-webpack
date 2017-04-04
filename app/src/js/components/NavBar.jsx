@@ -30,6 +30,13 @@ export default class NavBar extends React.Component {
 
   }
 
+  onAlertFather(event){
+
+    console.log("class NavBar, onAlertFather(event), Click desde mi hijo");
+
+  }
+
+
   /** Mapeamos el manu
         {this.menu.map(function(currentValue, index, array){
 
@@ -42,6 +49,7 @@ export default class NavBar extends React.Component {
 
       <div class="container">
         <nav role="navigation" class="navbar navbar-inverse">
+
           <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
               <span className="sr-only">Desplegar navegacion</span>
@@ -51,28 +59,32 @@ export default class NavBar extends React.Component {
             </button>
             <a href="#" class="navbar-brand">React 15</a>
           </div>
-            <div id="navbarCollapse" class="collapse navbar-collapse">
 
-                <ul className="nav navbar-nav">
-                  {this.menu.map(function(currentValue, index, array){
-                   return <NavItem
-                             key={currentValue.code}
-                             name={currentValue.name}
-                             isFirstOne={index == 0 ? true: false}/>;
-                  })}
-                </ul>
+          <div id="navbarCollapse" class="collapse navbar-collapse">
 
-                <form role="search" class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" placeholder="Search" class="form-control" />
-                    </div>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </div>
+              <ul className="nav navbar-nav">
+                {this.menu.map(function(currentValue, index, array){
+                    return <NavItem
+                           key={currentValue.code}
+                           name={currentValue.name}
+                           onClick={this.onAlertFather}
+                           isFirstOne={index == 0 ? true: false} />;
+                }.bind(this))}
+              </ul>
+
+              <form role="search" class="navbar-form navbar-left">
+                  <div class="form-group">
+                      <input type="text" placeholder="Search" class="form-control" />
+                  </div>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">Login</a></li>
+              </ul>
+          </div>
+
         </nav>
       </div>
+
     );
 
   }
