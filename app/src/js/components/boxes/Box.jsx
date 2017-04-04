@@ -12,8 +12,6 @@ import ResultBox from "../boxes/ResultBox.jsx"
 import ResultItem  from "../items/ResultItem.jsx"
 import InputItem from "../items/InputItem.jsx"
 
-import Toggle from "../examples/Toggle.jsx"
-
 
 export default class Box extends React.Component {
 
@@ -64,7 +62,6 @@ export default class Box extends React.Component {
 
         <InputBox />
 
-        <Toggle nombre="clase Toggle"/>
       </div>
 
     );
